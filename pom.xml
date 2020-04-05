@@ -7,6 +7,7 @@
   <groupId>org.anurag</groupId>
   <artifactId>FleetManager</artifactId>
   <version>1.0.0</version>
+  <packaging>war</packaging>
 
   <name>FleetManager</name>
   <!-- FIXME change it to the project's website -->
@@ -30,6 +31,12 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.11.0.rc1</version>
     </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
 
 
 
@@ -52,14 +59,21 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.3</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
